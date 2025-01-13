@@ -35,4 +35,9 @@ h1 {
 .drawn {
     background-color: burlywood;
     font-weight: bolder;
+    margin: 3px;
+}
+.last {
+    margin: 0px;
+    border-width: 3px;
 }

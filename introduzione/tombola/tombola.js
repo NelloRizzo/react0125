@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     // creo un array con i numeri da estrarre (il sacchetto dei numeri)
-    const numbers = Array.from({ length: 90 }) // array di 90 posizioni vuote
+    const bag = Array.from({ length: 90 }) // array di 90 posizioni vuote
         .map((_, i) => i + 1) // riempie le posizioni con il numero da 1 a 90 (i è l'indice, il risultato di i+1 viene messo in posizione i)
         // sort ordina l'array in maniera da confrontare uno a uno gli elementi interni
         .sort((a, b) => Math.random() > 0.5 ? -1 : 1)
+    let last = 0
 
     // il primo elemento dell'array risultato della getElementsByClassName
     const [table] = document.getElementsByClassName('table')
@@ -37,11 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // gestione del click sul button
     document.getElementById('draw-button').addEventListener('click', () => {
         // se non ci sono numeri esce
-        if (!numbers.length) return
+        if (!bag.length) return
         // estrae il primo numero
-        const number = numbers.pop()
+        const number = bag.pop()
+        const lastCell = document.getElementById(`n_${last}`)
+        if (lastCell) lastCell.setAttribute('class', 'cell drawn')
         // e modifica opportunamente la vista andando ad aggiungere la classe che segnala l'estrazione
         const cell = document.getElementById(`n_${number}`) // recupero la cella con l'id adeguato
-            .setAttribute('class', 'cell drawn') // aggiungo la classe drawn alla cella
+            .setAttribute('class', 'cell drawn last') // aggiungo la classe drawn alla cella
+        last = number
     })
 })
