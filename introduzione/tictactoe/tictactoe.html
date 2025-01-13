@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./tictactoe.css">
+</head>
+
+<body>
+    <h1>Gioco del Tris</h1>
+    <div class="table">
+        <div class="row">
+            <div class="cell" data-row="0" data-col="0"></div>
+            <div class="cell" data-row="0" data-col="1"></div>
+            <div class="cell" data-row="0" data-col="2"></div>
+        </div>
+        <div class="row">
+            <div class="cell" data-row="1" data-col="0"></div>
+            <div class="cell" data-row="1" data-col="1"></div>
+            <div class="cell" data-row="1" data-col="2"></div>
+        </div>
+        <div class="row">
+            <div class="cell" data-row="2" data-col="0"></div>
+            <div class="cell" data-row="2" data-col="1"></div>
+            <div class="cell" data-row="2" data-col="2"></div>
+        </div>
+    </div>
+
+    <script src="./tictactoe.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            Array.from(document.getElementsByClassName('cell')) // prendo tutte le celle in un array
+                .forEach(c => { // e per ognuna attivo l'evento click
+                    c.addEventListener('click', (e) => {
+                        const element = e.target
+                        const row = element.getAttribute('data-row')
+                        const col = element.getAttribute('data-col')
+                        move(row, col)
+                        element.innerText = grid[row][col]
+                    })
+                })
+        })
+    </script>
+</body>
+
+</html>
