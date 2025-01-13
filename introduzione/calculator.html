@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore</title>
+</head>
+
+<body>
+    <h1>Calcolatore</h1>
+    <div>
+        <div>Primo operando: <input type="range" min="5" max="30" value="5" id="first"><span id='first-value'></span></div>
+        <div><select id="operator">
+                <option value="+">&plus;</option>
+                <option value="-">&minus;</option>
+                <option value="*">&times;</option>
+                <option value="/">&div;</option>
+            </select></div>
+        <div>Secondo operando: <input type="number" id="second"></div>
+        <div><button>Calcola</button></div>
+        <div>Risultato: <span id="result"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById('first').addEventListener('change',
+                (e) => document.getElementById('first-value').innerText = e.target.value)
+            document.getElementById('first-value').innerText = 5
+        })
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector('button').addEventListener('click', () => {
+                const first = 1 * document.getElementById('first').value
+                const second = 1 * document.getElementById('second').value
+                let result = 0
+                switch (document.getElementById('operator').value) {
+                    case '+':
+                        result = first + second
+                        break
+                    case '-':
+                        result = first - second
+                        break
+                    case '*':
+                        result = first * second
+                        break
+                    case '/':
+                        result = first / second
+                        break
+                }
+                document.getElementById('result').innerText = result
+            })
+        })
+    </script>
+</body>
+
+</html>

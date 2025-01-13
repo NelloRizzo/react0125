@@ -1,0 +1,38 @@
+:root {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+}
+
+body {
+    width: 95vw;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.cell {
+    flex: 1 1 0px;
+    text-align: center;
+    border: 1px solid maroon;
+    border-radius: 15px;
+    margin: 2px;
+}
+
+.drawn {
+    background-color: burlywood;
+    font-weight: bolder;
+}

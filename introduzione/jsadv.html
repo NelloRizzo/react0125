@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            display: flex;
+            flex-direction: row;
+        }
+
+        li {
+            padding: 3px;
+            margin: 2px;
+            list-style: none;
+        }
+
+        li:hover {
+            background-color: black;
+            color: white;
+        }
+        a, a:hover {
+            text-decoration:  none ;
+            color: black;
+        }
+        a:hover {
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+    </ul>
+    <script>
+        const nello = {
+            nome: 'Nello',
+            cognome: 'Rizzo',
+            email: 'nellorizzo@live.it',
+            competenze: {
+                primaria: 'Informatica',
+                altre: ['Programmazione', 'Architettura di sistema']
+            }
+        }
+        let paperino = {
+            firstName: 'Paperino',
+            lastName: 'Paolino',
+            email: 'paperino@paperopoli.pp',
+            competenze: {
+                altre: 'Buon riposo'
+            }
+        }
+
+        function show(o) {
+            console.log(o.nome)
+            console.log(o['cognome'])
+            console.log(o.competenze.primaria)
+            console.log(o.competenze.altre)
+        }
+        show(nello)
+        show(paperino)
+
+        const { nome, cognome } = nello
+        console.log(nome, cognome)
+        const { nome: n, cognome: c } = nello
+        console.log(n, c)
+
+        copia = { ...nello, nome: 'NELLO' }
+        // copia.nome = 'NELLO'
+        console.log(copia, nello)
+
+        function handle(...a) {
+            if (!a.length) return
+            console.log(a[0])
+            a.shift()
+            handle(...a)
+        }
+        handle(1, 2, 3, 4, 5, 6, 7)
+        handle(1, 2)
+
+        const numbers = [1, 2, 3, 4, 5]
+        const [first, , third] = numbers
+        console.log(first, third)
+
+        const arr = [...numbers, 10, 11, 12]
+        console.log(arr)
+
+        const a = Array.from({ length: 10 }).map((v, i) => i + 1)
+        console.log(a)
+        a.filter(n => n % 2 === 0).map(n => `Numero: ${n}`).forEach(i => console.log(i))
+
+        console.log(a.reduce((a, n) => a + n, 0))
+
+        const menuItems = [{ text: 'Home', link: 'home.html' }, { text: 'About', link: 'about.html' }, { text: 'Contact', link: 'contact.html' }]
+        const [ul] = document.getElementsByTagName('ul')
+        menuItems
+            .map(item => {
+                const li = document.createElement('li')
+                const a = document.createElement('a')
+                a.innerText = item.text
+                a.setAttribute('href', item.link)
+                li.appendChild(a)
+                ul.appendChild(li)
+            })
+            .forEach(li => ul.appendChild(li))
+    </script>
+</body>
+
+</html>

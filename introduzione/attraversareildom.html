@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attraversamento del DOM</title>
+    <style>
+        .box {
+            display: inline-block;
+            overflow: auto;
+            height: 100px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Benvenuti</h1>
+    <p>Questa è una pagina HTML</p>
+    <ul>
+        <li>Questo</li>
+        <li>è</li>
+        <li>un</li>
+        <li>elenco</li>
+    </ul>
+
+    <div>
+        <div>
+            <span>Elemento: </span><span id="node"></span>(<span class="box" id="html"></span>)
+        </div>
+        <div>
+            <span>Contenuto: </span><span id="content"></span>
+        </div>
+        <div>
+            <span>Tipo: </span><span id="type"></span>
+        </div>
+        <button id="first-child">Primo Figlio</button>
+        <button id="parent">Parent</button>
+        <button id="next">Successivo</button>
+        <button id="previous">Precedente</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () =>{
+            const id = (id) => document.getElementById(id)
+            const show = (element) => { 
+                id('node').innerText = element.nodeName
+                id('content').innerText = element.nodeValue
+                id('type').innerText = element.nodeType
+                id('html').innerText = element.innerHTML
+            }
+
+            let current = document
+            show(current)
+
+            id('first-child').addEventListener('click', () => {
+                if (!current.firstChild) return 
+                current = current.firstChild
+                show(current)
+            })
+
+            id('parent').addEventListener('click', () =>{
+                if (!current.parentElement) return
+                current = current.parentElement
+                show(current)
+            })
+            id('next').addEventListener('click', () =>{
+                if (!current.nextSibling) return
+                current = current.nextSibling
+                show(current)
+            })
+            id('previous').addEventListener('click', () =>{
+                if (!current.previousSibling) return
+                current = current.previousSibling
+                show(current)
+            })
+
+        })
+
+
+    </script>
+</body>
+
+</html>

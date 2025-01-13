@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio</title>
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    <p>Questa è una pagina HTML.</p>
+
+    <script>
+        console.log("hoisting con var", myVar)
+        var myVar = "Test"
+        console.log("var dopo inizializzazione", myVar)
+
+        //console.log("hoisting con let", myLet) // Reference Error!
+        let myLet = "Test"
+        console.log("let dopo inizializzazione", myLet)
+        myLet = "Prova"
+        console.log(myLet)
+
+        const myConst = { t: "Test" }
+        console.log(myConst)
+        myConst.t = 'Prova'
+        console.log(myConst)
+
+        console.log("100" / "10")
+        console.log("100" + "10")
+
+        function print(p) {
+            console.log("Output", p)
+        }
+
+        print('Ciao')
+        print(10)
+        print(new Date())
+
+        const f = print
+        f('Esempio')
+
+        function test(p) {
+            function sample() {
+                console.log("Sample", p)
+            }
+            sample(p)
+        }
+        test("ciao")
+
+        function jsObj(name, surname) {
+            const describe = function () { // funzione anonima
+                console.log("Hello from", name, surname)
+            }
+            return {
+                name: name,
+                surname: surname,
+                showMe: describe
+            }
+        }
+        const me = jsObj("Nello", "Rizzo")
+        me.showMe()
+
+        function showInfo(info, showFun) {
+            showFun(info)
+        }
+
+        showInfo("Informazioni", function (i) { console.log("Funzione anonima come parametro", i) })
+        showInfo("Informazioni", function (i) { console.log("Altra funzione anonima come parametro", i) })
+
+        const numbers = [12, 354, 4567, 4352, 478, 3543, 7685567, 47568, 64357, 3457]
+
+        function sortAsc(n) {
+            for (let i = 0; i < n.length - 1; ++i) {
+                for (let j = i + 1; j < n.length; ++j) {
+                    if (n[i] > n[j]) {
+                        const temp = n[i]
+                        n[i] = n[j]
+                        n[j] = temp
+                    }
+                }
+            }
+        }
+        console.log("Array prima dell'ordinamento", numbers)
+        sortAsc(numbers)
+        console.log("Array dopo l'ordinamento", numbers)
+        function sortDesc(n) {
+            for (let i = 0; i < n.length - 1; ++i) {
+                for (let j = i + 1; j < n.length; ++j) {
+                    if (n[i] < n[j]) {
+                        const temp = n[i]
+                        n[i] = n[j]
+                        n[j] = temp
+                    }
+                }
+            }
+        }
+        sortDesc(numbers)
+        console.log("Array ordinato in senso descrescente", numbers)
+
+        function test(a, b) { return a < b }
+        function sort(n, testFunction) {
+            for (let i = 0; i < n.length - 1; ++i) {
+                for (let j = i + 1; j < n.length; ++j) {
+                    if (testFunction(n[i], n[j])) {
+                        const temp = n[i]
+                        n[i] = n[j]
+                        n[j] = temp
+                    }
+                }
+            }
+        }
+        sort(numbers, test)
+        console.log("Array ordinato con funzione esterna", numbers)
+        sort(numbers, function (x, y) { return x > y })
+        console.log("Array ordinato con funzione anonima", numbers)
+        sort(numbers, function (x, y) { return x % 2 == 0 ? x > y : x < y })
+        console.log("Array ordinato con funzione anonima", numbers)
+        // operatore arrow =>
+        sort(numbers, (x, y) => { return x % 2 == 0 ? x > y : x < y })
+        console.log("Array ordinato con funzione anonima", numbers)
+        // operatore arrow =>
+        sort(numbers, (x, y) => x % 2 == 0 ? x > y : x < y)
+        console.log("Array ordinato con funzione anonima", numbers)
+
+        const lambda = (a, b) => a > b
+        const log = x => console.log(x)
+        log("Ciao A tutti")
+
+        numbers.filter(x => x % 2 == 0).forEach((n, i) => console.log(i, n))
+    </script>
+</body>
+
+</html>

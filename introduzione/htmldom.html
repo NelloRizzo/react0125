@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM</title>
+</head>
+
+<body>
+    <h1>HTML DOM</h1>
+    <ul id="lista"></ul>
+
+    <script>
+        function showInfo(e) {
+            console.log("Name:", e.nodeName, "Value:", e.nodeValue, "Type:", e.nodeType)
+        }
+        //const h1 = document.getElementsByTagName('h1')[0]
+        const [h1] = document.getElementsByTagName('h1')
+        console.log(h1.innerText)
+        showInfo(document)
+        showInfo(h1)
+        showInfo(h1.firstChild)
+
+        const voci = ['pippo', 'pluto', 'paperino']
+
+        voci.forEach(v => {
+            const li = document.createElement('li')
+            li.innerText = v
+            document.getElementById('lista').appendChild(li)
+        })
+    </script>
+</body>
+
+</html>
