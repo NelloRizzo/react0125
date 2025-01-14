@@ -19,27 +19,27 @@ document.addEventListener('DOMContentLoaded', () => __awaiter(void 0, void 0, vo
     const selectCity = (acronym) => __awaiter(void 0, void 0, void 0, function* () {
         // ottengo le città
         const citiesList = yield service.getCities(acronym);
-        // pulisco la select
-        cities.innerHTML = '';
+        // riempio la select
+        cities.replaceChildren(
         // aggiungo le options
-        citiesList.forEach(c => {
+        ...citiesList.map(c => {
             const opt = document.createElement('option');
             opt.innerText = c.name;
             opt.value = c.cadastralCode;
-            cities.appendChild(opt);
-        });
+            return opt;
+        }));
     });
     // ottengo le province dal servizio
     const provinceList = yield service.getProvinces();
-    // pulisco la select
-    provinces.innerHTML = '';
-    // aggiungo le options
-    provinceList.forEach(p => {
+    // riempio la select
+    provinces.replaceChildren(
+    // creo un array di options
+    ...provinceList.map(p => {
         const opt = document.createElement('option');
         opt.innerText = p.acronym;
         opt.setAttribute('value', p.acronym);
-        provinces === null || provinces === void 0 ? void 0 : provinces.appendChild(opt);
-    });
+        return opt;
+    }));
     // sull'evento change richiamo il popolamento delle città
     provinces.addEventListener('change', () => __awaiter(void 0, void 0, void 0, function* () { return yield selectCity(provinces.value); }));
     // seleziono la città della provincia selezionata dopo il popolamento delle province
