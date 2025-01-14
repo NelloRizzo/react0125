@@ -42,7 +42,7 @@ export class CityService {
     }
     getCities(acronym) {
         return __awaiter(this, void 0, void 0, function* () {
-            return (yield this.getAllCities()).filter(c => c.province.acronym === acronym);
+            return (yield this.getAllCities()).filter(c => c.province.acronym === acronym).sort((c1, c2) => c1.name < c2.name ? -1 : 1);
         });
     }
     getProvinces() {

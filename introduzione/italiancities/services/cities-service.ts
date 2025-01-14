@@ -54,7 +54,7 @@ export class CityService {
     }
 
     async getCities(acronym: string): Promise<City[]> {
-        return (await this.getAllCities()).filter(c => c.province.acronym === acronym)
+        return (await this.getAllCities()).filter(c => c.province.acronym === acronym).sort((c1, c2) => c1.name < c2.name ? -1 : 1)
     }
 
     async getProvinces(): Promise<Province[]> {
