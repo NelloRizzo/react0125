@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <style>
+        .wait-message {
+            font-style: italic;
+        }
+
+        .hidden {
+            visibility: hidden !important;
+        }
+
+        .completed {
+            text-decoration: line-through;
+        }
+
+        .error {
+            font-weight: bolder;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <span></span>
+    <h1>ToDo List</h1>
+    <div class="wait-message">Loading...</div>
+    <div class="hidden error">Errore nel recupero dei dati</div>
+    <ul></ul>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
