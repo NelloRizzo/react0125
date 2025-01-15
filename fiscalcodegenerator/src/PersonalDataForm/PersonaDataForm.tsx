@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import PersonalData from "../model/personal-data"
+import SelectCity from "../SelectCity/SelectCity"
 
 interface PersonalDataFormProps {
     data: PersonalData
@@ -47,7 +48,7 @@ export default function PersonaDataForm({ data, onUpdate }: PersonalDataFormProp
             </div>
             <div className='input-row'>
                 <label htmlFor='birthCity'>Città di nascita</label>
-                <input id='birthCity' defaultValue={input.birthCity} onChange={updateState} />
+                <SelectCity province={data.birthProvince} city={data.birthCity} cityChanged={(c) => setInput(s => ({ ...s, birthCity: c }))} />
             </div>
         </div>
     )

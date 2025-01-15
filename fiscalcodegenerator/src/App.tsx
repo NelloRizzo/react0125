@@ -19,7 +19,7 @@ function App() {
       <h1>Generatore di Codice Fiscale</h1>
       <PersonaDataForm data={data} onUpdate={update}></PersonaDataForm>
       <button disabled={!valid} onClick={() => setFiscalCode('XXXXXX00X00X000X')}>Calcola</button>
-      <FiscalCodeViewer fiscalCode={fiscalCode}></FiscalCodeViewer>
+      <FiscalCodeViewer fiscalCode={fiscalCode} data={data}></FiscalCodeViewer>
     </div>
   )
 }

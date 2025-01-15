@@ -1,0 +1,13 @@
+.city-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+
+    .provinces {
+        flex: 1 1 0;
+    }
+
+    .cities {
+        flex: 3 3 0;
+    }
+}

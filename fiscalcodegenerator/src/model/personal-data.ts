@@ -5,9 +5,10 @@ export default class PersonalData {
         public lastName: string,
         public birthday: Date,
         public gender: Gender,
+        public birthProvince: string,
         public birthCity: string) { }
 }
 
 export const initialState: PersonalData = {
-    firstName: '', lastName: '', birthday: new Date(), gender: 'm', birthCity: ''
+    firstName: '', lastName: '', birthProvince: 'RM', birthday: new Date(), gender: 'm', birthCity: 'B496'
 }
