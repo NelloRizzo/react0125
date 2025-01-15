@@ -1,0 +1,40 @@
+@use './_variables' as v;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: v.$foreground;
+  background-color: v.$background;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: v.$link-color;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: v.$link-over-color;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+@for $h from 1 to 6 {
+  h#{$h} {
+    font-size: calc(v.$base-font-size * (3 - $h));
+    line-height: 1.1;
+  }
+}

@@ -1,0 +1,49 @@
+@use 'sass:color';
+
+.calculator {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 5px inset gray;
+    padding: 15px;
+    background-color: darkgray;
+    color: black;
+    user-select: none;
+
+    .display {
+        text-align: end;
+        font-size: 2em;
+        font-family: 'Courier New', Courier, monospace;
+        margin: 5px;
+        padding: 0 5px 0 5px;
+        border: 1px solid black;
+        overflow-x: auto;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .button {
+            cursor: pointer;
+            text-align: center;
+            flex: 1 1 0px;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid black;
+            border-radius: 15px;
+            align-items: center;
+
+            &:hover {
+                transform: translate(1px, 1px);
+                background-color: color.adjust($color: darkgray, $lightness: -20%);
+            }
+
+            span {
+                font-size: smaller;
+            }
+        }
+    }
+}

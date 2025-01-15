@@ -1,0 +1,7 @@
+@use 'sass:color';
+
+$foreground:  rgba(255, 255, 255, 0.87);
+$background: #242424;
+$link-color:  #646cff;
+$link-over-color: color.adjust($color: $link-color, $lightness: 10%);
+$base-font-size: 1.2rem;

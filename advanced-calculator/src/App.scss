@@ -1,0 +1,14 @@
+@use './assets/_variables' as v;
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: v.$background;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}

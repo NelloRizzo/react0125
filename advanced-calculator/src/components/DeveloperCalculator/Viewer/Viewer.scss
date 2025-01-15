@@ -1,0 +1,29 @@
+@use 'sass:color';
+@use '../../../assets/variables' as v;
+
+.radix-viewer {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: .2em;
+    border-left: 3px solid transparent;
+
+    &:hover {
+        background-color: color.adjust($color: v.$background, $lightness: 10%);
+    }
+
+    .title {
+        margin-right: 25px;
+        width: 4em;
+    }
+
+    .value {
+        text-transform: uppercase;
+    }
+}
+
+.active {
+    border-left: 3px solid rgb(20, 190, 190);
+}
