@@ -1,0 +1,25 @@
+.table {
+    display: flex;
+    flex-direction: column;
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 4px;
+
+        &:hover {
+            background-color: gray;
+        }
+
+        .number {
+            font-family: monospace;
+            flex: 3 1 0;
+            text-align: center;
+        }
+
+        .op {
+            flex: 1 1 0;
+        }
+    }
+}
