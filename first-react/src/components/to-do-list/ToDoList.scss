@@ -1,0 +1,21 @@
+.todo-list {
+    .ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .li {
+        list-style-type: none;
+        user-select: none;
+        cursor: pointer;
+
+        &:hover{
+            background-color: lightgray;
+        }
+
+        &.completed {
+            text-decoration: line-through;
+            font-style: italic;
+        }
+    }
+}
