@@ -1,4 +1,3 @@
-import { useState } from "react"
 import PersonalData from "../model/personal-data"
 
 interface FiscalCodeViewerProps {

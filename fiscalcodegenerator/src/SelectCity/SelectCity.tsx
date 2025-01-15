@@ -4,23 +4,23 @@ import { City, Province } from '../model/city-model'
 import { CityService } from '../services/cities-service'
 
 interface SelectCityProps {
-    province: string,
-    city: string
+    province?: string,
+    city?: string
     cityChanged?: (c: string) => void
 }
 export default function SelectCity({ cityChanged, city, province }: SelectCityProps) {
     const [provinces, setProvinces] = useState<Province[]>([])
     const [cities, setCities] = useState<City[]>([])
     const [selectedProvince, setSelectedProvince] = useState<string>('')
-    const [selectedCity, setSelectedCity] = useState<string>(city)
+    const [selectedCity, setSelectedCity] = useState<string>(city ?? '')
 
     const service = new CityService()
 
-    useEffect( 
+    useEffect(
         () => {
             service.getProvinces().then(p => {
                 setProvinces(p)
-                setSelectedProvince(province)
+                setSelectedProvince(province ?? '')
             })
         }
         , []) // array vuoto: l'effetto avviene una sola volta al montaggio del componente nella vista

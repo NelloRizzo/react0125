@@ -1,0 +1,9 @@
+.list-item {
+    .title::before {
+        content: '> '
+    }
+
+    .hidden {
+        display: none !important;
+    }
+}
