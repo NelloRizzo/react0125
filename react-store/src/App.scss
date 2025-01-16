@@ -1,0 +1,22 @@
+//.container > h1 {
+//    color: red;
+//}
+@use 'sass:color';
+
+$header-color: red;
+
+.app {
+    h1 {
+        color: $header-color;
+
+        &:hover {
+            color: color.adjust($color: $header-color, $lightness: -20%);
+        }
+    }
+
+    @for $i from 1 to 6 {
+        h#{$i} {
+            font-size: (6 - $i) * .4em;
+        }
+    }
+}
