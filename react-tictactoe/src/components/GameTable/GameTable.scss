@@ -1,0 +1,25 @@
+.game-table {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80vw;
+    width: 80vw;
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: stretch;
+        border: 1px solid black;
+        height: 100%;
+
+        .cell {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid red;
+        }
+    }
+}
