@@ -10,6 +10,7 @@ export default function ArticleList() {
     useEffect(() => {
         fetch(URL).then(r => r.json()).then(r => setList(r))
     }, [])
+    
     return (
         <div className="articles-list">
             {

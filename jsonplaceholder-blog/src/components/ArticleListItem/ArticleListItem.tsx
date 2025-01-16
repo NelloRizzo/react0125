@@ -1,6 +1,7 @@
 import { FC, useState } from "react"
 import { Article } from "../../models/Article"
 import './ArticleListItem.scss'
+
 interface ArticleListItemProps {
     article: Article
 }
