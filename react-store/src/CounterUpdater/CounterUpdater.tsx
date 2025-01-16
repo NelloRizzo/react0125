@@ -2,11 +2,10 @@ import { useDispatch } from "react-redux"
 import { decrement, increment, incrementBy } from "../state-management/counter-slice"
 import { ApplicationDispatch } from "../state-management/store"
 import { useState } from "react"
-import { initialState } from "../state-management/counter-state"
 
 export default function CounterUpdater() {
     const dispatch = useDispatch<ApplicationDispatch>()
-    const [value, setValue] = useState(initialState.min)
+    const [value, setValue] = useState(0)
     return (
         <div className="counter-updater">
             Quantità: <input type="number" defaultValue={value} onChange={(e) => setValue(Number.parseInt(e.target.value))} />

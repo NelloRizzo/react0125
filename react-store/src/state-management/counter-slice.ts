@@ -5,9 +5,10 @@ const counterSlice = createSlice({
     name: 'counter',
     initialState,
     reducers: {
-        increment: (state) => { state.value = (state.value + 1) % (state.max - state.min) },
-        decrement: (state) => { state.value = (state.value - 1) % (state.max - state.min) },
-        incrementBy: (state, action: PayloadAction<number>) => { state.value = (state.value + action.payload) % (state.max - state.min) }
+        increment: (state) => ({ ...state, value: (state.value + 1) % (state.max - state.min) }),
+        decrement: (state) => ({ ...state, value: (state.value - 1) % (state.max - state.min) }),
+        incrementBy: (state, action: PayloadAction<number>) => 
+            ({ ...state, value: (state.value + action.payload) % (state.max - state.min) })
     }
 })
 
