@@ -1,0 +1,19 @@
+@use '../../colors';
+
+.book-list-item {
+    border: 2px solid transparent;
+    
+    &:nth-last-of-type(2n) {
+        @include colors.table-even-row;
+
+    }
+
+    &:nth-last-of-type(2n+1) {
+        @include colors.table-odd-row;
+    }
+
+    &:hover {
+        border: 2px solid salmon;
+    }
+
+}

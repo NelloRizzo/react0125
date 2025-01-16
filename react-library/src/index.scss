@@ -1,0 +1,14 @@
+@use './fonts';
+
+body {
+  @include fonts.encode-sans-semi-expanded-thin;
+  font-size: 1.2rem;
+}
+
+@for $h from 1 to 6 {
+  h#{$h} {
+    @include fonts.modern-antiqua-regular;
+
+    font-size: (6-$h) * .5em;
+  }
+}

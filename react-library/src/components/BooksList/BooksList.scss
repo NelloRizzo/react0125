@@ -1,0 +1,14 @@
+@use '../../colors';
+
+.books-list {
+    h2 {
+        text-align: center;
+    }
+
+    .warning {
+        padding: 5px;
+        border-radius: 10px;
+        background-color: colors.$warning-background;
+        color: colors.$warning-primary;
+    }
+}

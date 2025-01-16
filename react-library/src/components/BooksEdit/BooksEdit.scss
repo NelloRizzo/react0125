@@ -1,0 +1,30 @@
+.book-edit {
+    .form {
+        display: flex;
+        flex-direction: column;
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-bottom: .5em;
+
+            label {
+                flex: 1 1 0;
+            }
+
+            input,
+            textarea {
+                flex: 5 1 0;
+            }
+
+            input[type='number'] {
+                text-align: end;
+            }
+
+            span {
+                flex: 1 1 0;
+            }
+        }
+    }
+}

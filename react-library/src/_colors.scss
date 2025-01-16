@@ -1,0 +1,10 @@
+$warning-background: rgb(225, 225, 100);
+$warning-primary: black;
+
+@mixin table-odd-row {
+    background: gray;
+}
+
+@mixin table-even-row {
+    background: white;
+}
