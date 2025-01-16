@@ -33,7 +33,7 @@ export default function BookEdit({ book }: BookEditProps) {
                         <span>&euro;</span></span>
                 </div>
                 <div className="row">
-                    <label htmlFor="pages">Pagine</label><span><input id='pages' type="number" defaultValue={editBook.pages} onChange={handleChange}></input></span>
+                    <label htmlFor="pages">Pagine</label><span><input id='pages' type="number" defaultValue={editBook.pages} onChange={handleChange}></input><span>&nbsp;</span></span>
                 </div>
                 <div className="row">
                     <button onClick={() => dispatch(addBook(editBook))}>Aggiungi</button>
