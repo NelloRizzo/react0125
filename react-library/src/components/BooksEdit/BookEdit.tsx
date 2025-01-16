@@ -29,11 +29,11 @@ export default function BookEdit({ book }: BookEditProps) {
                 </div>
                 <div className="row">
                     <label htmlFor="price">Prezzo</label>
-                    <span><input type="number" id='price' defaultValue={editBook.price} onChange={handleChange}></input>
+                    <span><input type="number" id='price' defaultValue={editBook.price} min={0} onChange={handleChange}></input>
                         <span>&euro;</span></span>
                 </div>
                 <div className="row">
-                    <label htmlFor="pages">Pagine</label><span><input id='pages' type="number" defaultValue={editBook.pages} onChange={handleChange}></input></span>
+                    <label htmlFor="pages">Pagine</label><span><input id='pages' type="number" min={0} defaultValue={editBook.pages} onChange={handleChange}></input><span>&nbsp;</span></span>
                 </div>
                 <div className="row">
                     <button onClick={() => dispatch(addBook(editBook))}>Aggiungi</button>
