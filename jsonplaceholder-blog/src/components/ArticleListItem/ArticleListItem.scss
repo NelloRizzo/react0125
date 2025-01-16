@@ -1,9 +1,35 @@
 .list-item {
-    .title::before {
-        content: '> '
+    display: flex;
+    flex-direction: row;
+
+    &:not(.visible):before {
+        content: url('/right.svg')
+    }
+
+    &.visible::before {
+        content: url('/down.svg')
+    }
+
+    .content {
+        margin-left: 5px;
     }
 
     .hidden {
         display: none !important;
+    }
+
+    .title {
+        font-family: serif;
+        font-size: larger;
+        text-transform: capitalize;
+        font-variant: small-caps;
+    }
+    .body {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 3px;
+        text-align: justify;
+        font-family: sans-serif;
+        font-style: italic;
     }
 }

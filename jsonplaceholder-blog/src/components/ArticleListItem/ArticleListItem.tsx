@@ -16,9 +16,11 @@ const ShowBody: FC<ShowBodyProps> = ({ text, visible }: ShowBodyProps) => {
 export default function ArticleListItem({ article }: ArticleListItemProps) {
     const [visible, setVisible] = useState<boolean>(false)
     return (
-        <div className="list-item" onClick={() => setVisible(!visible)}>
-            <div className="title">{article.title}</div>
-            <ShowBody text={article.body} visible={visible}></ShowBody>
+        <div className={`list-item ${visible ? 'visible' : ''}`} onClick={() => setVisible(!visible)}>
+            <div className="content">
+                <div className="title">{article.title}</div>
+                <ShowBody text={article.body} visible={visible}></ShowBody>
+            </div>
         </div>
     )
 }
