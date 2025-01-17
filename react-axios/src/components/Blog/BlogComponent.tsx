@@ -21,7 +21,7 @@ export default function Blog() {
                     list.map(a => (
                         <article>
                             <div className="title"><Link to={`/read/${a.id}`}>{a.title}</Link></div>
-                            <div className="info">pubblicato il {a.publishedAt.toString()} da {a.author.username}</div>
+                            <div className="info">pubblicato il {a.publishedAt.toString()} da {a.author.toString()}</div>
                         </article>
                     ))
                 }

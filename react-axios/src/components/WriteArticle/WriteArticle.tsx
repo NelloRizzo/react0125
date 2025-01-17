@@ -1,8 +1,7 @@
-import axios from "axios"
+import axios from "../../config/AxiosConfiguration"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const loginURL = 'https://localhost:7119/api/Users/login'
 const postURL = 'https://localhost:7119/api/Blog'
 export default function WriteArticle() {
     const navigate = useNavigate()
@@ -10,12 +9,11 @@ export default function WriteArticle() {
 
     const post = async () => {
         try {
-            const response = await axios.post<{ token: string }>(loginURL, { username: 'root', password: 'root' })
-            const { token } = response.data
-            const header = { 'Authorization': `Bearer ${token}` }
-
-            const ax = axios.create({ headers: header })
-            await ax.post(postURL, article)
+            //const response = await axios.post<{ token: string }>(loginURL, { username: 'root', password: 'root' })
+            //const { token } = response.data
+            //const header = { 'Authorization': `Bearer ${token}` }
+            //const ax = axios.create({ headers: header })
+            await axios.post(postURL, article)
             navigate('/list')
         } catch {
             console.log("Error")
