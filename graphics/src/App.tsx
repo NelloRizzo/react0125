@@ -1,21 +1,18 @@
-import { useEffect, useRef } from 'react'
-import './App.scss'
-
+import { Provider } from "react-redux"
+import StatusBarComponent from "./components/StatusBarComponent/StatusBarComponent"
+import ToolbarComponent from "./components/ToolbarComponent/ToolbarComponent"
+import WhiteboardComponent from "./components/WhiteboardComponent/WhiteboardComponent"
+import { store } from "./store/store-config"
 function App() {
-  const myCanvas = useRef(null)
-
-  useEffect(() => {
-    const canvas = myCanvas.current! as HTMLCanvasElement
-    const context = canvas.getContext('2d')! // ! -> non è ammessa la restituzione di un valore null
-
-    context.fillStyle = 'red';
-    context.fillRect(10, 10, 380, 380);
-  }, [])
-
   return (
-    <div className='app'>
-      <canvas ref={myCanvas} width={400} height={400} />
-    </div>
+    <Provider store={store}>
+      <div className='app'>
+        <h1>My Whiteboard</h1>
+        <ToolbarComponent />
+        <WhiteboardComponent />
+        <StatusBarComponent />
+      </div>
+    </Provider>
   )
 }
 
