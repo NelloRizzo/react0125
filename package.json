@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "use-sound": "^4.0.3"
   },
   "devDependencies": {
     "@types/node": "^22.10.7"

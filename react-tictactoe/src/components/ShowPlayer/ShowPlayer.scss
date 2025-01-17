@@ -4,14 +4,25 @@
     justify-content: space-around;
     padding: 5px;
 
-    .player {
-        border: 5px solid black;
-        padding: 5px;
-    }
-    .selected {
-        border: 5px solid red;
-    }
     img {
         width: 50px;
     }
+
+    .player {
+        border: 5px solid transparent;
+        padding: 5px;
+
+        img {
+            filter: grayscale(100%);
+        }
+    }
+
+    .selected {
+        border: 5px solid red;
+
+        img {
+            filter: none;
+        }
+    }
+
 }
