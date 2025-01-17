@@ -1,0 +1,22 @@
+.main-layout {
+    display: flex;
+    flex-direction: row;
+
+    main {
+        flex: 3 1 0;
+        border: 1px solid black;
+        h1 {
+            font-size: 1.5em;
+            text-align: center;
+        }
+    }
+
+    aside {
+        border: 1px solid black;
+        flex: 1 1 0;
+        h1 {
+            font-size: 1em;
+            text-align: right;
+        }
+    }
+}
