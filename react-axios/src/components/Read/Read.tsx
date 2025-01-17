@@ -20,7 +20,7 @@ export default function Read() {
     return (
         <div className="read">
             <h1>{article?.title}</h1>
-            <div className="info">pubblicato il {article?.publishedAt.toString()} da {article?.author as string}</div>
+            <div className="info">pubblicato il {article?.publishedAt.toString()} da {article?.author.toString()}</div>
             <div className="content">
                 {article?.content}
             </div>
