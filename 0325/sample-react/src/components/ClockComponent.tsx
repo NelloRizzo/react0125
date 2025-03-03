@@ -26,10 +26,11 @@ class ClockComponent extends React.Component<{}, ClockState> {
     }
 
     tick() {
-        this.setState({
+        this.setState(prevState => ({
+            ...prevState,
             date: new Date(),
-            updates: this.state.updates + 1
-        });
+            updates: prevState.updates + 1
+        }));
     }
     render() {
         return (

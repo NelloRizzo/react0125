@@ -1,14 +1,16 @@
-import React from "react";
+import React from 'react'
 import './Clock.scss'
+import HoursViewer from './HoursViewer'
+import MinutesViewer from './MinutesViewer'
+import SecondsViewer from './SecondsViewer'
 
-const ClockFC: React.FC = () => {
+const ComplexClock = () => {
+
     const [state, setState] = React.useState({ date: new Date() });
-    const [updates, setUpdates] = React.useState(0);
 
     React.useEffect(() => {
         const timerID = setInterval(() => {
             setState(prevState => ({ ...prevState, date: new Date() }));
-            setUpdates(prevUpdates => prevUpdates + 1);
         }, 1000);
 
         return () => {
@@ -18,8 +20,10 @@ const ClockFC: React.FC = () => {
 
     return (
         <div className="clock doto">
-            {state.date.toLocaleTimeString()} - Updates: {updates}
+            <HoursViewer hours={state.date.getHours()} />
+            <MinutesViewer minutes={state.date.getMinutes()} />
+            <SecondsViewer seconds={state.date.getSeconds()} />
         </div>
     )
 }
-export default ClockFC
+export default ComplexClock
