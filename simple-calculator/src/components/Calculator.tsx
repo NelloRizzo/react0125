@@ -32,7 +32,6 @@ export const Calculator: FC = (): ReactNode => {
         })
     }
     const handleKeyDown: KeyboardEventHandler<Element> = (e: React.KeyboardEvent) => {
-        console.log(e.key)
         if (e.key >= '0' && e.key <= '9') {
             addDigit(e.key as Digit)
         }

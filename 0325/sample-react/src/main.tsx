@@ -6,9 +6,9 @@ import ClockFC from './components/ClockFC'
 import ComplexClock from './components/complex-clock/ComplexClock'
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+  <>
     <ClockComponent />
     <ClockFC />
     <ComplexClock/>
-  </StrictMode>,
+  </>,
 )
