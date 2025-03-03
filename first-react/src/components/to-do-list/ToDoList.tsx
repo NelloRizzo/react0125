@@ -18,8 +18,6 @@ export default function ToDoList() {
             <h1>Cose da Fare</h1>
             <div className="new-todo">
                 <input onChange={(e) => setToDo(e.target.value)} />
-                <input onChange={(e) => setToDo(e.target.value)} />
-                <input onChange={(e) => setToDo(e.target.value)} />
                 <button onClick={() => setToDos([...todos, { id: todos.length + 1, title: todo, completed: false }])}>Aggiungi</button>
             </div>
             <div className="ul">

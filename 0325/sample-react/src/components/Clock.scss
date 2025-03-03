@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+
+.doto {
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  /* Added font size for better visibility */
+  color: #ffffff;
+  /* Changed text color for contrast */
+  background-color: navy;
+  /* Changed background color for contrast */
+  border-radius: 10px;
+  /* Add border radius for visual appeal */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  /* Add box shadow for depth */
+  padding: 20px;
+  /* Add padding for better spacing */
+  margin: 20px;
+  /* Add margin for better spacing */
+}
