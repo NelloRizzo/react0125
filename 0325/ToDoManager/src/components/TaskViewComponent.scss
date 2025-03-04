@@ -1,0 +1,30 @@
+.task {
+    user-select: none;
+    line-height: 1em;
+
+    span {
+        margin-left: .5em;
+    }
+
+    .title {
+        &.completed::before {
+            content: "✔️";
+            margin-right: .5em;
+        }
+
+        &.pending::before {
+            content: "🕒";
+            margin-right: .5em;
+        }
+
+    }
+
+    .description {
+        &.hidden {
+            visibility: hidden !important;
+            display: none !important;
+        }
+
+        margin-left: 1.5em;
+    }
+}
