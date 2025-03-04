@@ -1,9 +1,11 @@
 import { FC, useEffect, useState } from "react"
 import { Article } from "../../models/Models"
+import { useNavigate } from "react-router-dom"
 import axios_instance, { ALL_ARTICLES_URL } from "../../http-config/http-config"
 
 const ArticlesListComponent: FC = () => {
     const [articles, setArticles] = useState<Article[]>([])
+    const navigate = useNavigate();
     useEffect(() => {
         const fetchArticles = async () => {
             try {
@@ -20,7 +22,10 @@ const ArticlesListComponent: FC = () => {
             <div>
                 <h1>Elenco Articoli</h1>
                 {articles.map(article =>
-                    <div key={article.id}><h3>{article.title}</h3></div>)
+                    <div key={article.id}>
+                        <span className="title">{article.title}</span>
+                        <button onClick={() => navigate(`/view/${article.id}`)}>View</button>
+                    </div>)
                 }
             </div>
         ) : (

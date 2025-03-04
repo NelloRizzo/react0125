@@ -6,6 +6,7 @@ const BASE_URL = 'https://localhost:7119';
 export const ALL_ARTICLES_URL = '/api/blog'
 export const SAVE_ARTICLE_URL = "/api/blog"
 export const LOGIN_URL = '/api/users/login'
+export const GET_ARTICLE_URL = '/api/blog/ID'
 
 const axios_instance = axios.create({
     baseURL: BASE_URL,
