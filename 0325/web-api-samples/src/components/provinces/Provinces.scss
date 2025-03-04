@@ -2,11 +2,17 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    border-right: 1px solid white;
-    padding: 0 1em 0 1em;
-    user-select: none;
 
     li {
         cursor: pointer;
     }
 }
+.provinces {
+    border-right: 1px solid white;
+    padding: 0 1em 0 1em;
+    user-select: none;
+}
+.wait {
+    cursor: wait;
+}
+
