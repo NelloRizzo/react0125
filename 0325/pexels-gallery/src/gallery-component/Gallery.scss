@@ -1,0 +1,10 @@
+.gallery {
+    .credits {
+        display: flex;
+        flex-direction: row;
+
+        span {
+            margin-right: 1em;
+        }
+    }
+}

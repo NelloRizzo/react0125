@@ -1,5 +1,6 @@
 import { ChangeEvent, FC, useState } from "react";
 import axios_instance, { SAVE_ARTICLE_URL } from "../../http-config/http-config";
+import { useNavigate } from "react-router-dom";
 
 interface ArticleModel {
     title: string
@@ -9,6 +10,8 @@ const NewArticleComponent: FC = () => {
     const [article, setArticle] = useState<ArticleModel>({ title: '', content: '' })
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => { setArticle(a => ({ ...a, [e.target.name]: e.target.value })) }
+
+    const nav = useNavigate()
 
     const saveArticle = () => {
         const save = async () => {
@@ -21,6 +24,8 @@ const NewArticleComponent: FC = () => {
         }
         if (article.title.length && article.content.length)
             save()
+        
+        nav('/')
     }
 
     return (

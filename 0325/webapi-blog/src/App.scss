@@ -2,6 +2,10 @@
     display: flex;
     flex-direction: column;
 
+    .shadowed {
+        color: #ccc !important;
+    }
+
     nav {
         ul {
             display: flex;
